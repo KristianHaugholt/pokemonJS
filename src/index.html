@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        body {
+            background-color: cornflowerblue;
+        }
+        h1{
+            margin: 0;
+            font-size: 16px;
+        }
+        button{
+            border: 1px solid black;
+            background-color: white;
+            font-size: 16px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div style="display: inline-block; position: relative;">
+        <div id="flashing"
+                style="background-color: black; position: absolute; top: 0; right: 0; left: 0; bottom: 0; opacity: 0; pointer-events: none;"></div>
+
+        <canvas></canvas>
+
+        <div style="position: absolute; bottom: 0; height: 150px; left: 0; right: 0; background-color: white;
+        border: black 6px solid; border-radius: 15px;
+        display: flex">
+            <div style="width: 66.66%; display: grid; grid-template-columns: repeat(2, 1fr);">
+                <button>Attack</button>
+                <button>Attack</button>
+                <button>Attack</button>
+                <button>Attack</button>
+            </div>
+            <div style="display: flex; width: 33.34%; align-items: center; justify-content: center; border-left: 6px solid black;">
+                <h1>type</h1>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+            integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="data/battle.js"></script>
+    <script src="data/collision.js"></script>
+    <script src="classes.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
