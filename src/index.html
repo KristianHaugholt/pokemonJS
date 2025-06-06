@@ -28,26 +28,103 @@
             cursor: pointer;
             background-color: rgba(0, 0, 0, 0.1);
         }
+        .pokeStatus{
+            background-color: white;
+            width: 250px;
+            position: absolute;
+            border: black 5px solid;
+            border-radius: 6px;
+            padding: 12px;
+        }
+        .attacks{
+            position: absolute;
+            bottom: 0;
+            height: 150px;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: black 6px solid;
+            border-radius: 15px;
+            display: flex;
+        }
+        .healthBarBack{
+            height: 5px;
+            background-color: rgba(0,0,0,0.2);
+            margin-top: 10px;
+        }
+        .healthBarFront{
+            height: 5px;
+            background-color: green;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        #attackMessage{
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 12px;
+            display: none;
+            background-color: white;
+            cursor: pointer;
+        }
+        #flashing{
+            background-color: black;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #battleInfo{
+            display: none;
+        }
+
     </style>
 </head>
 <body>
     <div style="display: inline-block; position: relative;">
-        <div id="flashing"
-                style="background-color: black; position: absolute; top: 0; right: 0; left: 0; bottom: 0; opacity: 0; pointer-events: none;"></div>
+        <div id="flashing">
+
+        </div>
 
         <canvas></canvas>
 
-        <div style="position: absolute; bottom: 0; height: 150px; left: 0; right: 0; background-color: white;
-        border: black 6px solid; border-radius: 15px;
-        display: flex">
-            <div style="width: 66.66%; display: grid; grid-template-columns: repeat(2, 1fr);">
-                <button>Attack</button>
-                <button>Attack</button>
-                <button>Attack</button>
-                <button>Attack</button>
+        <div id="battleInfo">
+            <div class="pokeStatus" style="
+            top: 50px; left: 50px;">
+                <h1>Draggle</h1>
+                <div style="position: relative">
+                    <div class="healthBarBack"></div>
+                    <div class="healthBarFront" id="enemyHealthBar"></div>
+                </div>
             </div>
-            <div style="display: flex; width: 33.34%; align-items: center; justify-content: center; border-left: 6px solid black;">
-                <h1>type</h1>
+
+            <div class="pokeStatus" style="
+            bottom: 200px; right: 50px;">
+                <h1>Emby</h1>
+                <div style="position: relative">
+                    <div class="healthBarBack"></div>
+                    <div class="healthBarFront" id="myHealthBar"></div>
+                </div>
+            </div>
+
+            <div class="attacks">
+                <div id="attackMessage"></div>
+                <div id="attackBox"
+                        style="width: 66.66%; display: grid; grid-template-columns: repeat(2, 1fr);">
+                </div>
+                <div id="typeBox"
+                        style="display: flex; width: 33.34%; align-items: center; justify-content: center; border-left: 6px solid black;">
+                    <h1>Type</h1>
+                </div>
             </div>
         </div>
 
@@ -57,7 +134,10 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="data/battle.js"></script>
     <script src="data/collision.js"></script>
+    <script src="data/attacks.js"></script>
+    <script src="data/monster.js"></script>
     <script src="classes.js"></script>
+    <script src="battleScene.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
